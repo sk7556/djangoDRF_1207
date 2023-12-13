@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'drf_spectacular',
+    'users',
+    'posts',
 ]
 
 MIDDLEWARE = [
@@ -52,8 +54,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',  # 추가
+    'django.middleware.common.CommonMiddleware',  # 이 미들웨어 바로 앞에 추가
 ]
 
+# 개발 중에는 모든 도메인에서의 CORS를 허용
+CORS_ALLOW_ALL_ORIGINS = True
 ROOT_URLCONF = 'project.urls'
 
 TEMPLATES = [
