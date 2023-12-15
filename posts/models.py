@@ -30,4 +30,4 @@ class Like(models.Model):
         unique_together = ('author', 'post')
 
     def __str__(self):
-        return f'{self.author} - {self.post}'
+        return f'{self.author} - {self.post}' 
